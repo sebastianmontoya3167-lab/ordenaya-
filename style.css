@@ -1,0 +1,202 @@
+:root {
+  --color-fondo: #fdfaf6;
+  --color-primario: #a45c40;
+  --color-primario-oscuro: #7c4229;
+  --color-texto: #2e2622;
+  --color-borde: #e2d5c8;
+  --color-exito: #2f7d4f;
+  --color-error: #b3372c;
+  --radio: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.topbar {
+  background: var(--color-primario);
+  color: white;
+  padding: 28px 20px;
+  text-align: center;
+}
+
+.topbar.admin {
+  background: var(--color-primario-oscuro);
+}
+
+.topbar h1 {
+  margin: 0 0 6px 0;
+  font-size: 1.6rem;
+}
+
+.topbar p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 24px 16px 60px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio);
+  padding: 22px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--color-primario-oscuro);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+button {
+  margin-top: 18px;
+  padding: 12px;
+  background: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.15s ease-in-out;
+}
+
+button:hover {
+  background: var(--color-primario-oscuro);
+}
+
+.buscar-pedido {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.buscar-pedido input {
+  flex: 1;
+}
+
+.buscar-pedido button {
+  margin-top: 0;
+  width: auto;
+  padding: 10px 16px;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #7a6f66;
+  margin-top: -6px;
+}
+
+#lista-mis-pedidos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#lista-mis-pedidos li {
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 0.92rem;
+}
+
+#mensaje-estado,
+#mensaje-admin {
+  min-height: 20px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+
+#mensaje-estado.exito,
+#mensaje-admin.exito {
+  color: var(--color-exito);
+}
+
+#mensaje-estado.error,
+#mensaje-admin.error {
+  color: var(--color-error);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--color-borde);
+  padding: 8px 6px;
+  text-align: left;
+}
+
+th {
+  color: var(--color-primario-oscuro);
+}
+
+.estado-pendiente {
+  color: #a67c00;
+  font-weight: 600;
+}
+
+.estado-listo {
+  color: var(--color-exito);
+  font-weight: 600;
+}
+
+.btn-mini {
+  margin-top: 0;
+  padding: 6px 10px;
+  font-size: 0.8rem;
+  width: auto;
+}
+
+footer {
+  text-align: center;
+  color: #9a8f85;
+  font-size: 0.8rem;
+  padding: 20px 0 30px 0;
+}
