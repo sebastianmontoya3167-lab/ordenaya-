@@ -1,0 +1,16 @@
+rules_version = '2';
+
+// Reglas de seguridad de Firestore para el proyecto OrdenaYa.
+// Nivel académico: se permite leer y crear pedidos públicamente
+// (no hay login de usuarios en este proyecto), pero no se permite
+// borrar la colección completa desde el cliente.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /pedidos/{pedidoId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if true;
+      allow delete: if false;
+    }
+  }
+}
