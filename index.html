@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OrdenaYa - Panadería La Espiga</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1>🥖 Panadería La Espiga</h1>
+    <p>Haz tu pedido en línea, sin filas ni mensajes perdidos</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Nuevo pedido</h2>
+      <form id="form-pedido">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" required placeholder="Ej: Camila Restrepo" />
+
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" required placeholder="Ej: 3001234567" />
+
+        <label for="producto">Producto</label>
+        <select id="producto" required>
+          <option value="">Selecciona un producto</option>
+          <option value="Pan francés (x6)">Pan francés (x6) - $6.000</option>
+          <option value="Torta de chocolate">Torta de chocolate - $35.000</option>
+          <option value="Croissant (x4)">Croissant (x4) - $12.000</option>
+          <option value="Pan de queso (x10)">Pan de queso (x10) - $10.000</option>
+        </select>
+
+        <label for="cantidad">Cantidad</label>
+        <input type="number" id="cantidad" min="1" value="1" required />
+
+        <label for="notas">Notas (opcional)</label>
+        <textarea id="notas" placeholder="Ej: sin azúcar, para recoger a las 5pm"></textarea>
+
+        <button type="submit">Enviar pedido</button>
+      </form>
+      <p id="mensaje-estado"></p>
+    </section>
+
+    <section class="card">
+      <h2>Mis pedidos recientes</h2>
+      <p class="hint">Ingresa tu teléfono y consulta el estado de tus pedidos.</p>
+      <div class="buscar-pedido">
+        <input type="tel" id="telefono-consulta" placeholder="Tu número de teléfono" />
+        <button id="btn-consultar">Consultar</button>
+      </div>
+      <ul id="lista-mis-pedidos"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>Proyecto ABP - Programación para la Web - UCN Medellín</p>
+  </footer>
+
+  <!-- Firebase SDK (versión compat, sencilla de usar sin herramientas de build) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="js/firebase-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
